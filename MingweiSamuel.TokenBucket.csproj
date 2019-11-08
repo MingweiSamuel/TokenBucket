@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <PackageId>MingweiSamuel.TokenBucket</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>MingweiSamuel</Authors>
+    <Company>MingweiSamuel</Company>
+    <Copyright>MIT 2019 Mingwei Samuel</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/MingweiSamuel/TokenBucket</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Description>Simple Token Bucket.</Description>
+    <Summary>Simple Token Bucket.</Summary>
+    <PackageTags>token bucket rate limit</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+</Project>
