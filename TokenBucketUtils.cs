@@ -29,7 +29,8 @@ namespace MingweiSamuel.TokenBucket
         /// Attempts to get a token from every bucket, or no tokens at all. Will synchronize on each instance
         /// recursively.
         /// </summary>
-        /// <param name="buckets">Buckets to get tokens from.</param>
+        /// <param name="buckets">Buckets to get tokens from. Note that this will be re-sorted in-place,
+        /// so do not depend on the order of buckets being preserved.</param>
         /// <returns>-1 if tokens were obtained, otherwise the approximate delay until tokens will be available.</returns>
         public static long GetAllTokensOrDelay(params ITokenBucket[] buckets)
         {
@@ -47,7 +48,7 @@ namespace MingweiSamuel.TokenBucket
         /// <summary>
         /// </summary>
         /// <param name="buckets">Buckets to check.</param>
-        /// <param name="i">Index of current bucket(for recursion).</param>
+        /// <param name="i">Index of current bucket (for recursion).</param>
         /// <returns>-1 if all tokens were obtained or the index of the first limiting bucket.</returns>
         private static int GetAllInternal(IReadOnlyList<ITokenBucket> buckets, int i)
         {
