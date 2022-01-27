@@ -1,0 +1,63 @@
+name: CI
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'main' ]
+  pull_request:
+    branches: [ 'main' ]
+
+jobs:
+  build:
+    name: CI
+    runs-on: windows-2022
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+      WWW_DIR: docs
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - name: Install Dependencies
+        run: dotnet restore TokenBucket.sln
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore TokenBucket.sln
+
+      - name: Test
+        run: dotnet test --no-restore --verbosity minimal TokenBucket.sln
+
+      - name: Install & Run DocFX
+        shell: pwsh
+        run: |
+          choco install docfx -y | Out-Null
+          docfx metadata .\docfx_project\docfx.json
+          docfx build .\docfx_project\docfx.json -o "$env:WWW_DIR"
+
+      - name: Push to gh-pages
+        # Do not deploy PRs.
+        if: ${{ github.event_name != 'pull_request' }}
+        shell: bash
+        run: |
+          git -C "$WWW_DIR" init -q
+          git -C "$WWW_DIR" remote add origin "$(git remote get-url origin)"
+          git -C "$WWW_DIR" config credential.helper "$(git config credential.helper)"
+          git -C "$WWW_DIR" config 'http.https://github.com/.extraheader' "$(git config 'http.https://github.com/.extraheader')"
+          git -C "$WWW_DIR" config core.autocrlf input
+          git -C "$WWW_DIR" config core.safecrlf false
+          git -C "$WWW_DIR" fetch origin gh-pages:gh-pages || true
+          git -C "$WWW_DIR" symbolic-ref HEAD refs/heads/gh-pages
+          git -C "$WWW_DIR" reset
+          git -C "$WWW_DIR" checkout || true
+          git -C "$WWW_DIR" add .
+          if git -C "$WWW_DIR" -c 'user.name=github-actions[bot]' -c 'user.email=41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "Update Docs $(date -I) $(git rev-parse HEAD)";
+          then
+            git -C "$WWW_DIR" push -u origin gh-pages --quiet
+          else
+            echo 'No changes to commit'
+          fi
