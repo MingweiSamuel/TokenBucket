@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.0;netcoreapp1.0;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard1.0;net45;net461;netstandard2.0;</TargetFrameworks>
     <PackageId>MingweiSamuel.TokenBucket</PackageId>
     <Version>1.0.1</Version>
     <Authors>MingweiSamuel</Authors>
