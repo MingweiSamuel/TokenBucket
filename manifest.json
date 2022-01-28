@@ -1,0 +1,164 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/TokenBucket/TokenBucket/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "../README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html",
+          "hash": "DZvthUkVJ9ZrFjTTilpDBSf2WS3Jy63NR4A9eOg+wIo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MingweiSamuel.TokenBucket.CircularTokenBucket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MingweiSamuel.TokenBucket.CircularTokenBucket.html",
+          "hash": "z67CUtcdo6iqDNvo64R3Pm6Z1SDewkpZXobukjGMq1A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MingweiSamuel.TokenBucket.ITokenBucket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MingweiSamuel.TokenBucket.ITokenBucket.html",
+          "hash": "vPkO+RNZJtj/3+54ZtTr5Spix9SwIP4F5o83SgqZ4vI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MingweiSamuel.TokenBucket.TokenBucketUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MingweiSamuel.TokenBucket.TokenBucketUtils.html",
+          "hash": "HrWMiec6DCDgN64Ew4oboHR8N/TPEdfM/Etwe9S5u+w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MingweiSamuel.TokenBucket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MingweiSamuel.TokenBucket.html",
+          "hash": "9iBYmyBHPH/LgHAGxRACiw2qtG7ozR51KH+4eRQrNC0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "umutwLDgj6q3h7ett5BFZdaIVGY9CsVbNJ9W5avQoIU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "El8N251oxntv0Zj/oQjDvDiC7wLs9+Vi1Y+wZyB4//A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "h47DXL9wbOUIC0n5mSgql8ALiMUHh6/r8PPMkv3q6ag="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "b3uNyJbM1DM5okPyXxEYz28IZw2+OqOjPPPGOVB9p1M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 4,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
