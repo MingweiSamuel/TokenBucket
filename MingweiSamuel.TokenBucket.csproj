@@ -2,10 +2,10 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.0;net45;net461;netstandard2.0;</TargetFrameworks>
     <PackageId>MingweiSamuel.TokenBucket</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>MingweiSamuel</Authors>
     <Company>MingweiSamuel</Company>
-    <Copyright>MIT 2019 Mingwei Samuel</Copyright>
+    <Copyright>2022 Mingwei Samuel</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/MingweiSamuel/TokenBucket</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -13,5 +13,10 @@
     <Summary>Simple Token Bucket.</Summary>
     <PackageTags>token bucket rate limit</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 </Project>
